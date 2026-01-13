@@ -1,0 +1,115 @@
+
+/* utilities */
+.flex{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.grid-row{
+  display:grid;
+  grid-template-rows: repeat(1,1fr);
+  gap: 1.5rem;
+}
+.grid-column{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.wrapper{
+  max-width: 96rem;
+  width: 90%;
+  margin: 0 auto;
+  /* border: 2px solid rgb(128, 0, 47); */
+}
+.hamburger-icon {
+  font-weight: 400; 
+  font-size: 14px; 
+}
+.btn{
+  background: transparent;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  }
+  .round-edges-btn{
+  background: var(--orange);
+  color: var(--white);
+  border-radius: 2rem;
+  padding: 0.9rem 2.8rem;
+  margin: 0.5rem;
+  border: none;
+  cursor: pointer;
+  }
+
+
+
+ 
+  .text-center{
+    text-align: center;
+    }
+
+.left-rounded-border-small{
+  border-radius: 50px 0 0 50px;
+}
+.left-rounded-border-large{
+  border-radius: 200px 0 0 200px;
+}
+.section-gap{
+  margin-top: 1.5rem !important;
+  margin-bottom:1.5rem !important;
+}
+.container-heading{
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: bottom;
+}
+    .blue-text{
+      color:var(--primary-color);  
+    }
+    .grey-text{
+      color: var(--grey);
+    }
+    .background-orange{
+      background-color: var(--orange);
+    }
+    .background-dark-blue{
+      background-color: var(--secondary-color-dark-blue);
+    }
+    .background-light-blue{
+      background-color: var(--primary-color);
+    }
+    .text-font-12{
+      font-size: 1.2rem;
+    }
+    .text-font-15{
+      font-size: 1.5rem;
+    }
+    .text-font-16{
+      font-size: 1.6rem;
+    }
+    .text-font-18{
+      font-size: 1.8rem;
+    }
+    .text-font-20{
+      font-size: 1.8rem;
+    }
+    .text-font-22{
+      font-size: 2.2rem;
+    }
+    .text-font-40{
+      font-size: 40px;
+    }
+    .p1{
+      padding: 3rem 0; 
+    }
+    .p2{
+      padding: 3rem 2rem;
+    }
+    .font-weight-300{
+      font-weight: 300;
+    }
+    .font-weight-400{
+      font-weight: 400;
+    }
+    /* utilities end */

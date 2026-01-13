@@ -1,0 +1,493 @@
+/* Root CSS variables */
+:root {
+  --primary-color:#00ACED ;
+  --white:#FFFFFF;
+  --button-mid-blue:#006989 ;
+  --secondary-color-dark-blue:#002936;
+  --grey: #595959;
+  --orange:#FB6806;
+  --font-family:"Open Sans", sans-serif;
+  --border-radius: 5px;
+  --transition: all 0.3s ease-in-out;
+  --favourite-icon-color:#f6d1cd;
+  --favourite-icon-color-before:#572e2a;
+  --form-background-color:#e1f6fc;
+  --summary-background: #0c2d92;
+  --error-message-color:#f02e2e;
+  --success-message-color:#0dc53b;
+}
+/* ========== Base Styles ========== */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html{
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: #f4f6f9;
+  color: #333;
+}
+/* ======== message ======== */
+.success-message h2,
+.success-message p {
+  color: #088f08;
+  font-style: italic;
+  font-size: 1.6rem;
+}
+/* .error-message {
+  color: #fe3232;
+  font-style: italic;
+  margin: 0 auto;
+  font-weight: 900;
+  padding: 3rem;
+}
+.error-message p{
+  color: var(--error-message-color);
+} */
+
+/* ======== HEADER ======== */
+.dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 1001;
+}
+
+/* ======== Logo inside header ======== */
+.dashboard__logo{
+  padding: 1rem;
+
+}
+.dashboard__logo img {
+  max-width: 450px;
+  height: auto;
+}
+
+/* ======== Toggle button default hidden ======== */
+.dashboard__toggle-btn {
+  display: none;
+  background-color: #2f3e46;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dashboard--container {
+  display: flex;
+  min-height: 100vh;
+  margin: 1rem 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ========== Sidebar ========== */
+.dashboard__sidebar {
+  width: 250px;
+  background-color: #2f3e46;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: 2px 0 8px rgba(251, 249, 249, 0.1);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+.dashboard__profile {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--white);
+}
+
+.dashboard__username {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* ========== Navigation Links ========== */
+.dashboard__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard__nav-link {
+  color: #cfd8dc;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.dashboard__nav-link:hover {
+  background-color: #f4f0f0;
+  color: #111111;
+}
+
+.dashboard__nav-link--logout {
+  margin-top: auto;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+.dashboard__nav-link--logout:hover {
+  background-color: #ff6b6b;
+  color: var(--white);
+}
+
+/* ========== Main Content ========== */
+.dashboard__main {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+.welcome-text{
+padding: 8rem;
+font-size: 1.6rem;
+font-weight: 700;
+line-height: 1.5;
+color: var(--secondary-color-dark-blue);
+max-width: 80rem;
+margin: 0.1rem auto;
+background-color: var(--primary-color);
+border-radius: 10px 30% 10px 30%;
+overflow: hidden;
+}
+
+.dashboard__welcome-text{
+padding: 0.4rem;
+font-weight: 700;
+}
+.welcome-text-list li{
+  list-style-type: none;
+  padding-left: 0.2rem;
+}
+/* ========== Overlay for mobile menu ==========*/
+.dashboard__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+/* Block: category-management */
+.category-management,
+.product-management {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--secondary-color-dark-blue);
+  background-color: var(--form-background-color);
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Heading */
+.category-management__title,
+.product-management__title  {
+  font-size: 1.8rem;
+  margin: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* Form: Add category */
+.productAddUpdate {
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.product-management__subtitle{
+ /* margin: 0.8rem auto; */
+ font-size: 1.6rem;
+ border-bottom: 2px dashed var(--secondary-color-dark-blue);
+ font-weight: 500;
+}
+.category-management__form,
+.product-management__form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.category-management__form input[type="text"],
+.product-management__form input[type="text"]  {
+  flex-grow: 1;
+  padding:  1.5rem 0.5rem;
+  font-size: 2rem;
+  border: 1px solid var(--secondary-color-dark-blue);
+}
+
+.category-management__form button,
+.product-management__form button {
+  padding: 0.5rem 1rem;
+  background-color:var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.category-management__form button:hover
+.product-management__form button:hover {
+  background-color: #004999;
+  font-size: 1.8rem;
+  transition: ease-in-out;
+}
+
+/* Table styles */
+.category-management__table
+.product-management__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.category-management__table thead th,
+.product-management__table thead th{
+  background-color: var(--secondary-color-dark-blue);
+  color: white;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.category-management__table tbody,
+.product-management__table tbody{
+  font-size: 1.4rem;
+  
+}
+.category-management__table th,
+.category-management__table td,
+.product-management__table th,
+.product-management__table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.category-management__table th ,
+.product-management__table th {
+  background-color: #f2f2f2;
+}
+
+.category-management__actions,
+.product-management__actions {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.category-management__input,
+.product-management__input 
+ {
+  padding: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* Buttons inside actions */
+.category-management__button,
+.product-management__button,
+.save-button,
+.cancel-button {
+  padding: 0.75rem 1.5rem;          
+  font-size: 1.4rem;                    
+  border-radius: var(--border-radius); 
+  background-color: var(--primary-color);
+  color: var(--white);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.category-management__button--update,
+ .product-management__button--update,
+ .product-management__button--add,
+ .save-button
+{
+  background-color: #28a745;
+  color: white;
+}
+
+.category-management__button--update:hover,
+.product-management__button--update:hover,
+.product-management__button--add:hover,
+.save-button:hover {
+  background-color: #218838;
+  font-weight: 600;
+}
+
+.category-management__button--delete,
+.product-management__button--delete,
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.category-management__button--delete:hover ,
+.product-management__button--delete:hover,
+.cancel-button:hover{
+  background-color: #c82333;
+}
+
+.category-management__button:disabled,
+.product-management__button:disabled  {
+  background-color: #ccc;       
+  color: #666;                  
+  cursor: not-allowed;          
+  opacity: 0.6;              
+  box-shadow: none;             
+}
+/* ends category management display */
+
+/* === add/update item form === */
+.product-form i{
+  color: rgb(252, 38, 38);
+}
+.product-form .purchase-button{
+  background-color: var(--secondary-color-dark-blue);
+  padding: 1rem;
+}
+.product-link{
+  margin:0 auto;
+}
+.summary__product-button{
+  padding: 1.8rem 4.5rem;
+}  
+/* === add/update item form === */
+
+/* testing success */
+.alert {
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+
+/* ========== Responsive Sidebar ========== */
+@media (max-width: 992px) {
+
+  .dashboard__sidebar {
+    position: fixed;
+    left: 0;
+    top: 10rem;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .dashboard__sidebar--active {
+    transform: translateX(0);
+  }
+
+  .dashboard__toggle-btn {
+    display: block;
+  }
+
+  .dashboard__overlay--active {
+    display: block;
+  }
+
+  /*  Logo */
+.dashboard__logo {
+  padding: 1rem 1.5rem;
+} 
+
+ .dashboard__logo img {
+  max-width: 350px;
+  height: auto;
+} 
+/* Ensure main content doesn't get hidden under sidebar */
+.dashboard__main {
+    transition: margin-left 0.3s ease;
+  }
+
+  .dashboard__sidebar--active ~ .dashboard__main {
+    margin-left: 250px; /* Width of your sidebar */
+  }
+  /* block: category management */
+
+.category-management,
+.product-management {
+    margin: 20px;
+    padding: 16px;
+  }
+
+  .category-management__title,
+   .product-management__title  {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .category-management__form,
+  .category-management__form-inline,
+  .product-management__form,
+  .product-management__form-inline  {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-management__input,
+  .product-management__input {
+    width: 100%;
+  }
+
+  .category-management__button,
+  .product-management__button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .category-management__actions,
+  .product-management__actions {
+    flex-direction: column;
+  }
+
+  .category-management__table-header,
+  .category-management__table-cell,
+  .product-management__table-header,
+  .product-management__table-cell {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+}
+
+
+
+
+
+
